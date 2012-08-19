@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/game.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <style>  
+    .me { background: #009966 }  
+    .zombie { border: 1px solid #FF0000; cursor: pointer; }
+    .table { border: 1px solid silver; float: left; }
+    #items { float: left; font-size: 20px; margin-left: 5px; }
+    .square { font-size: 15px; width: 20px; height: 20px; }
+</style>
+
+<div>
+    <table class="table">
+        <tr>
+            <td><div class="square" style="padding: 20px" id="1A"></div></td>
+            <td><div class="square" style="padding: 20px" id="1B"></div></td>
+            <td><div class="square" style="padding: 20px" id="1C"></div></td>
+            <td><div class="square" style="padding: 20px" id="1D"></div></td>
+            <td><div class="square" style="padding: 20px" id="1E"></div></td>
+            <td><div class="square" style="padding: 20px" id="1F"></div></td>
+            <td><div class="square" style="padding: 20px" id="1G"></div></td>
+            <td><div class="square" style="padding: 20px" id="1H"></div></td>
+            <td><div class="square" style="padding: 20px" id="1I"></div></td>
+            <td><div class="square" style="padding: 20px" id="1J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="2A"></div></td>
+            <td><div class="square" style="padding: 20px" id="2B"></div></td>
+            <td><div class="square" style="padding: 20px" id="2C"></div></td>
+            <td><div class="square" style="padding: 20px" id="2D"></div></td>
+            <td><div class="square" style="padding: 20px" id="2E"></div></td>
+            <td><div class="square" style="padding: 20px" id="2F"></div></td>
+            <td><div class="square" style="padding: 20px" id="2G"></div></td>
+            <td><div class="square" style="padding: 20px" id="2H"></div></td>
+            <td><div class="square" style="padding: 20px" id="2I"></div></td>
+            <td><div class="square" style="padding: 20px" id="2J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="3A"></div></td>
+            <td><div class="square" style="padding: 20px" id="3B"></div></td>
+            <td><div class="square" style="padding: 20px" id="3C"></div></td>
+            <td><div class="square" style="padding: 20px" id="3D"></div></td>
+            <td><div class="square" style="padding: 20px" id="3E"></div></td>
+            <td><div class="square" style="padding: 20px" id="3F"></div></td>
+            <td><div class="square" style="padding: 20px" id="3G"></div></td>
+            <td><div class="square" style="padding: 20px" id="3H"></div></td>
+            <td><div class="square" style="padding: 20px" id="3I"></div></td>
+            <td><div class="square" style="padding: 20px" id="3J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="4A"></div></td>
+            <td><div class="square" style="padding: 20px" id="4B"></div></td>
+            <td><div class="square" style="padding: 20px" id="4C"></div></td>
+            <td><div class="square" style="padding: 20px" id="4D"></div></td>
+            <td><div class="square" style="padding: 20px" id="4E"></div></td>
+            <td><div class="square" style="padding: 20px" id="4F"></div></td>
+            <td><div class="square" style="padding: 20px" id="4G"></div></td>
+            <td><div class="square" style="padding: 20px" id="4H"></div></td>
+            <td><div class="square" style="padding: 20px" id="4I"></div></td>
+            <td><div class="square" style="padding: 20px" id="4J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="5A"></div></td>
+            <td><div class="square" style="padding: 20px" id="5B"></div></td>
+            <td><div class="square" style="padding: 20px" id="5C"></div></td>
+            <td><div class="square" style="padding: 20px" id="5D"></div></td>
+            <td><div class="square" style="padding: 20px" id="5E"></div></td>
+            <td><div class="square" style="padding: 20px" id="5F"></div></td>
+            <td><div class="square" style="padding: 20px" id="5G"></div></td>
+            <td><div class="square" style="padding: 20px" id="5H"></div></td>
+            <td><div class="square" style="padding: 20px" id="5I"></div></td>
+            <td><div class="square" style="padding: 20px" id="5J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="6A"></div></td>
+            <td><div class="square" style="padding: 20px" id="6B"></div></td>
+            <td><div class="square" style="padding: 20px" id="6C"></div></td>
+            <td><div class="square" style="padding: 20px" id="6D"></div></td>
+            <td><div class="square" style="padding: 20px" id="6E"></div></td>
+            <td><div class="square" style="padding: 20px" id="6F"></div></td>
+            <td><div class="square" style="padding: 20px" id="6G"></div></td>
+            <td><div class="square" style="padding: 20px" id="6H"></div></td>
+            <td><div class="square" style="padding: 20px" id="6I"></div></td>
+            <td><div class="square" style="padding: 20px" id="6J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="7A"></div></td>
+            <td><div class="square" style="padding: 20px" id="7B"></div></td>
+            <td><div class="square" style="padding: 20px" id="7C"></div></td>
+            <td><div class="square" style="padding: 20px" id="7D"></div></td>
+            <td><div class="square" style="padding: 20px" id="7E"></div></td>
+            <td><div class="square" style="padding: 20px" id="7F"></div></td>
+            <td><div class="square" style="padding: 20px" id="7G"></div></td>
+            <td><div class="square" style="padding: 20px" id="7H"></div></td>
+            <td><div class="square" style="padding: 20px" id="7I"></div></td>
+            <td><div class="square" style="padding: 20px" id="7J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="8A"></div></td>
+            <td><div class="square" style="padding: 20px" id="8B"></div></td>
+            <td><div class="square" style="padding: 20px" id="8C"></div></td>
+            <td><div class="square" style="padding: 20px" id="8D"></div></td>
+            <td><div class="square" style="padding: 20px" id="8E"></div></td>
+            <td><div class="square" style="padding: 20px" id="8F"></div></td>
+            <td><div class="square" style="padding: 20px" id="8G"></div></td>
+            <td><div class="square" style="padding: 20px" id="8H"></div></td>
+            <td><div class="square" style="padding: 20px" id="8I"></div></td>
+            <td><div class="square" style="padding: 20px" id="8J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="9A"></div></td>
+            <td><div class="square" style="padding: 20px" id="9B"></div></td>
+            <td><div class="square" style="padding: 20px" id="9C"></div></td>
+            <td><div class="square" style="padding: 20px" id="9D"></div></td>
+            <td><div class="square" style="padding: 20px" id="9E"></div></td>
+            <td><div class="square" style="padding: 20px" id="9F"></div></td>
+            <td><div class="square" style="padding: 20px" id="9G"></div></td>
+            <td><div class="square" style="padding: 20px" id="9H"></div></td>
+            <td><div class="square" style="padding: 20px" id="9I"></div></td>
+            <td><div class="square" style="padding: 20px" id="9J"></div></td>
+        </tr>
+        <tr>
+            <td><div class="square" style="padding: 20px" id="10A"></div></td>
+            <td><div class="square" style="padding: 20px" id="10B"></div></td>
+            <td><div class="square" style="padding: 20px" id="10C"></div></td>
+            <td><div class="square" style="padding: 20px" id="10D"></div></td>
+            <td><div class="square" style="padding: 20px" id="10E"></div></td>
+            <td><div class="square" style="padding: 20px" id="10F"></div></td>
+            <td><div class="square" style="padding: 20px" id="10G"></div></td>
+            <td><div class="square" style="padding: 20px" id="10H"></div></td>
+            <td><div class="square" style="padding: 20px" id="10I"></div></td>
+            <td><div class="square" style="padding: 20px" id="10J"></div></td>
+        </tr>
+    </table>
+
+    <div id="items">
+        
+    </div>
+
+    <div style="clear:both">&nbsp;</div>
+</div>
+
+<button id="hunt">hunt once</button> <button id="huntall">hunt all</button>
+Your energy (0 equals death!): <span id="energy"></span>
+<br />
+<div id="calcEnergy" style="font-size: 20px">
+
+</div>
+    @RenderBody()
+</body>
+</html>
