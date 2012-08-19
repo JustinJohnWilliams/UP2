@@ -73,10 +73,6 @@ function Hunt() {
 
     $(currentZombie).html($(currentZombie).attr("data-health"));
 
-    DetermineEndOfGame();
-
-    if (gameOver) return;
-
     if ($(currentZombie).attr("data-health") == 0) {
         $(currentZombie).removeClass("zombie")
                 .unbind('click')
